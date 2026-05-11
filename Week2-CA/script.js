@@ -27,5 +27,8 @@ function calculateGrade() {
   } else if (totalMarks < 400) {
     document.getElementById("result").innerHTML =
       "<h3 style='color: red;'>Fail</h3>";
+  } else {
+    document.getElementById("result").innerHTML =
+      "<h3 style='color: red;'>Invalid Marks</h3>";
   }
 }
