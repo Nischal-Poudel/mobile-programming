@@ -1,0 +1,3093 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Scope of Work — Remote Hydrological Surveillance Camera System
+    </title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+      :root {
+        --red: #eb071f;
+        --navy: #0d1b2a;
+        --slate: #1e2d3d;
+        --mid: #2e4057;
+        --cool: #4a6274;
+        --muted: #8fa3b1;
+        --pale: #c5d5df;
+        --bg: #f4f7f9;
+        --white: #ffffff;
+        --amber: #e8a020;
+        --green: #2a7d4f;
+        --border: #d0dce4;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        font-size: 13.5px;
+        line-height: 1.7;
+        color: var(--navy);
+        background: var(--white);
+      }
+
+      /* ── COVER ── */
+      .cover {
+        background: var(--navy);
+        color: var(--white);
+        padding: 80px 72px 60px;
+        position: relative;
+        min-height: 260px;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .cover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6px;
+        height: 100%;
+        background: var(--red);
+      }
+      .cover::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        right: -60px;
+        width: 300px;
+        height: 300px;
+        border: 40px solid rgba(255, 255, 255, 0.03);
+        border-radius: 50%;
+      }
+      .cover-tag {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+      .cover h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1.2;
+        max-width: 720px;
+        margin-bottom: 24px;
+      }
+      .cover-meta {
+        display: flex;
+        gap: 48px;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .cover-meta-item label {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .cover-meta-item span {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .cover-badge {
+        display: inline-block;
+        margin-top: 16px;
+        background: rgba(235, 7, 31, 0.15);
+        border: 1px solid rgba(235, 7, 31, 0.4);
+        color: #ff8a8a;
+        padding: 4px 12px;
+        border-radius: 3px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+      }
+
+      /* ── PAGE ── */
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 48px 72px;
+      }
+
+      /* ── SECTION HEADINGS ── */
+      .section-label {
+        font-size: 9px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 700;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .section-label::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 22px;
+        font-weight: 400;
+        color: var(--navy);
+        margin-bottom: 16px;
+      }
+      h3 {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--slate);
+        margin: 24px 0 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      h4 {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--mid);
+        margin: 16px 0 6px;
+      }
+
+      p {
+        margin-bottom: 10px;
+        color: #2c3e4f;
+      }
+
+      .section-divider {
+        border: none;
+        border-top: 2px solid var(--border);
+        margin: 40px 0;
+      }
+
+      /* ── CALLOUT BOXES ── */
+      .callout {
+        border-left: 3px solid var(--red);
+        background: #fff5f6;
+        padding: 14px 18px;
+        border-radius: 0 4px 4px 0;
+        margin: 16px 0;
+        font-size: 13px;
+      }
+      .callout.amber {
+        border-color: var(--amber);
+        background: #fffbf0;
+      }
+      .callout.green {
+        border-color: var(--green);
+        background: #f0fbf5;
+      }
+      .callout.blue {
+        border-color: #2b6cb0;
+        background: #ebf4ff;
+      }
+      .callout strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .callout.amber strong {
+        color: #92600a;
+      }
+      .callout strong {
+        color: var(--red);
+      }
+      .callout.green strong {
+        color: var(--green);
+      }
+      .callout.blue strong {
+        color: #2b6cb0;
+      }
+
+      /* ── TABLES ── */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 12.5px;
+        margin: 14px 0 20px;
+      }
+      thead tr {
+        background: var(--navy);
+        color: var(--white);
+      }
+      thead th {
+        padding: 10px 12px;
+        text-align: left;
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      tbody tr:nth-child(even) {
+        background: var(--bg);
+      }
+      tbody tr:hover {
+        background: #e8f0f5;
+      }
+      tbody td {
+        padding: 9px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+        line-height: 1.5;
+      }
+      .cost-col {
+        text-align: right;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+      }
+      tfoot td {
+        padding: 11px 12px;
+        font-weight: 700;
+        background: var(--slate);
+        color: var(--white);
+        font-size: 12.5px;
+        border: none;
+      }
+      tfoot .cost-col {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .tag {
+        display: inline-block;
+        padding: 2px 7px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+      .tag-meets {
+        background: #d1fae5;
+        color: #065f46;
+      }
+      .tag-exceeds {
+        background: #dbeafe;
+        color: #1e40af;
+      }
+      .tag-gap {
+        background: #fee2e2;
+        color: #991b1b;
+      }
+      .tag-note {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      .tag-assumed {
+        background: #e0e7ff;
+        color: #3730a3;
+      }
+      .tag-supplied {
+        background: #f3f4f6;
+        color: #374151;
+      }
+
+      /* ── BLOCK DIAGRAM ── */
+      .diagram-wrap {
+        background: var(--navy);
+        border-radius: 8px;
+        padding: 32px;
+        margin: 20px 0;
+      }
+
+      /* ── NUMBERED LIST ── */
+      ol.scope-list {
+        padding-left: 0;
+        list-style: none;
+        counter-reset: scope;
+      }
+      ol.scope-list li {
+        counter-increment: scope;
+        display: flex;
+        gap: 14px;
+        margin-bottom: 10px;
+        font-size: 13px;
+        align-items: flex-start;
+      }
+      ol.scope-list li::before {
+        content: counter(scope, decimal-leading-zero);
+        background: var(--navy);
+        color: var(--white);
+        min-width: 28px;
+        height: 22px;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+        margin-top: 2px;
+      }
+
+      ul.scope-list {
+        padding-left: 18px;
+        margin-bottom: 10px;
+      }
+      ul.scope-list li {
+        margin-bottom: 6px;
+        font-size: 13px;
+      }
+
+      /* ── TWO-COL ── */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 16px 0;
+      }
+      .stat-box {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 16px 18px;
+        background: var(--bg);
+      }
+      .stat-box .stat-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .stat-box .stat-value {
+        font-family: "DM Serif Display", serif;
+        font-size: 26px;
+        color: var(--navy);
+      }
+      .stat-box .stat-note {
+        font-size: 11px;
+        color: var(--cool);
+        margin-top: 4px;
+      }
+
+      /* ── PAGE BREAK ── */
+      .page-break {
+        page-break-before: always;
+        padding-top: 40px;
+      }
+
+      /* ── ANNEX TAG ── */
+      .annex-header {
+        background: #fef3c7;
+        border: 1px solid #f59e0b;
+        border-radius: 6px;
+        padding: 12px 18px;
+        margin-bottom: 20px;
+        font-size: 12px;
+        color: #92400e;
+      }
+
+      .power-warning {
+        background: var(--navy);
+        color: var(--white);
+        border-radius: 6px;
+        padding: 20px 24px;
+        margin: 16px 0;
+      }
+      .power-warning h4 {
+        color: var(--amber);
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 13px;
+      }
+      .power-warning p {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 6px;
+        font-size: 12.5px;
+      }
+
+      .cost-summary-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        border-bottom: 1px solid var(--border);
+        padding: 8px 0;
+        font-size: 13px;
+      }
+      .cost-summary-row.total {
+        border-bottom: none;
+        border-top: 2px solid var(--navy);
+        padding-top: 12px;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .cost-summary-row .amount {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--navy);
+        text-align: right;
+      }
+
+      .inline-note {
+        font-size: 11px;
+        color: var(--cool);
+        font-style: italic;
+        margin-top: -6px;
+        margin-bottom: 10px;
+      }
+
+      .footnote {
+        font-size: 11px;
+        color: var(--cool);
+        border-top: 1px solid var(--border);
+        padding-top: 8px;
+        margin-top: 8px;
+      }
+
+      @media print {
+        body {
+          font-size: 12px;
+        }
+        .page {
+          padding: 32px 48px;
+        }
+        .cover {
+          padding: 60px 48px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════════════════
+     COVER PAGE
+═══════════════════════════════════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-tag">Evon Electric Private Limited · Scope of Work</div>
+      <h1>
+        Remote Hydrological Surveillance Camera System<br />Installation &amp;
+        Commissioning
+      </h1>
+      <p
+        style="
+          color: rgba(255, 255, 255, 0.6);
+          max-width: 540px;
+          font-size: 13px;
+        "
+      >
+        Edge-node-managed PTZ camera infrastructure with solar power
+        integration, central image management, and data API — deployed across 74
+        remote stations.
+      </p>
+      <span class="cover-badge">Confidential · Draft</span>
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <label>Prepared By</label><span>Evon Electric Private Limited</span>
+        </div>
+        <div class="cover-meta-item">
+          <label>Deployment Scale</label><span>74 Stations</span>
+        </div>
+        <div class="cover-meta-item">
+          <label>Document Date</label><span>May 2026</span>
+        </div>
+        <div class="cover-meta-item">
+          <label>Version</label><span>1.0 — Draft</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     OVERVIEW
+═══════════════════════════════════════════════════════════════ -->
+    <div class="page">
+      <div class="section-label">01 · Project Overview</div>
+      <h2>System Overview &amp; Architecture</h2>
+
+      <p>
+        This document defines the complete scope of work, hardware supply,
+        software development, installation, commissioning, and recurring service
+        obligations for the deployment of a remote hydrological surveillance
+        camera system across <strong>74 stations</strong>.
+      </p>
+      <p>
+        Each station is located in a remote geographic environment with no
+        reliable fixed power grid and limited network access. The system is
+        designed around a solar-powered edge computing architecture: a PTZ
+        camera captures time-lapse and programmable directional images, which
+        are processed, buffered, and transmitted by a local edge node over a
+        cellular network to a centrally managed image server maintained by Evon
+        Electric Private Limited.
+      </p>
+
+      <div class="callout blue">
+        <strong>Scope Boundary — Integration with DHM</strong>
+        The Central Camera Management System developed and operated by Evon
+        Electric will expose a documented API for downstream integration.
+        Integration with the DHM's internal information systems is
+        <em>not included</em> in this agreement and will be scoped, quoted, and
+        executed under a separate service agreement.
+      </div>
+
+      <div class="two-col" style="margin-top: 24px">
+        <div class="stat-box">
+          <div class="stat-label">Deployment Scale</div>
+          <div class="stat-value">74</div>
+          <div class="stat-note">
+            Independent remote stations, identically configured
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Central Management</div>
+          <div class="stat-value">1</div>
+          <div class="stat-note">
+            Server platform, hosted &amp; maintained by Evon Electric
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Service Term</div>
+          <div class="stat-value">3 Yrs</div>
+          <div class="stat-note">
+            Software + server use included; AMC billed annually after Year 3
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Camera (Per Site)</div>
+          <div class="stat-value">1 Unit</div>
+          <div class="stat-note">
+            PTZ camera supplied by contractor; commissioning is our scope
+          </div>
+        </div>
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- BLOCK DIAGRAM -->
+      <div class="section-label">02 · System Architecture</div>
+      <h2>Architecture &amp; Data Flow</h2>
+      <p>
+        The diagram below illustrates the full data and power flow for a single
+        station, and its connection to the central infrastructure. All 74
+        stations share the same topology.
+      </p>
+
+      <div class="diagram-wrap">
+        <svg
+          viewBox="0 0 860 560"
+          xmlns="http://www.w3.org/2000/svg"
+          style="width: 100%; height: auto; display: block"
+        >
+          <defs>
+            <marker
+              id="arr"
+              markerWidth="8"
+              markerHeight="6"
+              refX="7"
+              refY="3"
+              orient="auto"
+            >
+              <polygon points="0 0, 8 3, 0 6" fill="#4A90D9" />
+            </marker>
+            <marker
+              id="arr-amber"
+              markerWidth="8"
+              markerHeight="6"
+              refX="7"
+              refY="3"
+              orient="auto"
+            >
+              <polygon points="0 0, 8 3, 0 6" fill="#E8A020" />
+            </marker>
+            <marker
+              id="arr-green"
+              markerWidth="8"
+              markerHeight="6"
+              refX="7"
+              refY="3"
+              orient="auto"
+            >
+              <polygon points="0 0, 8 3, 0 6" fill="#4CAF50" />
+            </marker>
+            <marker
+              id="arr-red"
+              markerWidth="8"
+              markerHeight="6"
+              refX="7"
+              refY="3"
+              orient="auto"
+            >
+              <polygon points="0 0, 8 3, 0 6" fill="#EB071F" />
+            </marker>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="2" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Background areas -->
+          <!-- Site station box -->
+          <rect
+            x="10"
+            y="10"
+            width="520"
+            height="540"
+            rx="10"
+            fill="#1E2D3D"
+            stroke="#2E4057"
+            stroke-width="1.5"
+          />
+          <text
+            x="26"
+            y="32"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#4A6274"
+            letter-spacing="2"
+            text-transform="uppercase"
+          >
+            REMOTE STATION (×74)
+          </text>
+
+          <!-- Cloud -->
+          <ellipse
+            cx="638"
+            cy="145"
+            rx="60"
+            ry="36"
+            fill="#162032"
+            stroke="#2E4057"
+            stroke-width="1.5"
+          />
+          <text
+            x="638"
+            y="140"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#8FA3B1"
+            text-anchor="middle"
+          >
+            3G / 4G
+          </text>
+          <text
+            x="638"
+            y="153"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#8FA3B1"
+            text-anchor="middle"
+          >
+            INTERNET
+          </text>
+
+          <!-- Central server box -->
+          <rect
+            x="580"
+            y="220"
+            width="160"
+            height="90"
+            rx="8"
+            fill="#162032"
+            stroke="#EB071F"
+            stroke-width="1.5"
+          />
+          <text
+            x="660"
+            y="244"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#EB071F"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            CENTRAL SERVER
+          </text>
+          <text
+            x="660"
+            y="258"
+            font-family="DM Sans, sans-serif"
+            font-size="8"
+            fill="#8FA3B1"
+            text-anchor="middle"
+          >
+            Image Mgmt Platform
+          </text>
+          <text
+            x="660"
+            y="271"
+            font-family="DM Sans, sans-serif"
+            font-size="8"
+            fill="#8FA3B1"
+            text-anchor="middle"
+          >
+            Evon Electric Hosted
+          </text>
+          <text
+            x="660"
+            y="284"
+            font-family="DM Sans, sans-serif"
+            font-size="8"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            3-year included
+          </text>
+          <text
+            x="660"
+            y="297"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            Up to 100 concurrent stations
+          </text>
+
+          <!-- DHM box -->
+          <rect
+            x="580"
+            y="360"
+            width="160"
+            height="55"
+            rx="8"
+            fill="#1A1A2E"
+            stroke="#4A6274"
+            stroke-width="1"
+            stroke-dasharray="4,3"
+          />
+          <text
+            x="660"
+            y="381"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            DHM SYSTEM
+          </text>
+          <text
+            x="660"
+            y="394"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+            font-style="italic"
+          >
+            Separate Agreement
+          </text>
+          <text
+            x="660"
+            y="406"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#3a4a5a"
+            text-anchor="middle"
+          >
+            API Integration (future)
+          </text>
+
+          <!-- ─── POWER SYSTEM ─── -->
+          <!-- Solar (existing) -->
+          <rect
+            x="30"
+            y="40"
+            width="120"
+            height="50"
+            rx="6"
+            fill="#1A3A2A"
+            stroke="#2A6040"
+            stroke-width="1.5"
+          />
+          <text
+            x="90"
+            y="60"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#4CAF50"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            SOLAR PANELS
+          </text>
+          <text
+            x="90"
+            y="73"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#2A6040"
+            text-anchor="middle"
+          >
+            ≥200W · Pre-installed
+          </text>
+          <text
+            x="90"
+            y="83"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#2A5030"
+            text-anchor="middle"
+          >
+            [Existing, not in scope]
+          </text>
+
+          <!-- MPPT -->
+          <rect
+            x="30"
+            y="120"
+            width="120"
+            height="44"
+            rx="6"
+            fill="#1E3040"
+            stroke="#4A90D9"
+            stroke-width="1.5"
+          />
+          <text
+            x="90"
+            y="138"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#4A90D9"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            MPPT CONTROLLER
+          </text>
+          <text
+            x="90"
+            y="152"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#2A5070"
+            text-anchor="middle"
+          >
+            20–40A · RS-485/Modbus
+          </text>
+
+          <!-- Battery -->
+          <rect
+            x="30"
+            y="195"
+            width="120"
+            height="50"
+            rx="6"
+            fill="#1E2A40"
+            stroke="#E8A020"
+            stroke-width="1.5"
+          />
+          <text
+            x="90"
+            y="214"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#E8A020"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            BATTERY BANK
+          </text>
+          <text
+            x="90"
+            y="227"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#806020"
+            text-anchor="middle"
+          >
+            12V · 400Ah LiFePO₄
+          </text>
+          <text
+            x="90"
+            y="238"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#604010"
+            text-anchor="middle"
+          >
+            (4× 100Ah recommended)
+          </text>
+
+          <!-- Power distribution -->
+          <rect
+            x="30"
+            y="278"
+            width="120"
+            height="38"
+            rx="6"
+            fill="#1E2A40"
+            stroke="#2E4057"
+            stroke-width="1.5"
+          />
+          <text
+            x="90"
+            y="294"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#8FA3B1"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            POWER DIST.
+          </text>
+          <text
+            x="90"
+            y="307"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            Fused 12V Bus
+          </text>
+
+          <!-- DC-DC Converter -->
+          <rect
+            x="30"
+            y="350"
+            width="120"
+            height="38"
+            rx="6"
+            fill="#1E2A40"
+            stroke="#6A4090"
+            stroke-width="1.5"
+          />
+          <text
+            x="90"
+            y="366"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#A080D0"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            DC-DC BOOST
+          </text>
+          <text
+            x="90"
+            y="379"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#6A4090"
+            text-anchor="middle"
+          >
+            12V → 36V · 120W
+          </text>
+
+          <!-- ─── CAMERA ─── -->
+          <rect
+            x="30"
+            y="422"
+            width="120"
+            height="48"
+            rx="6"
+            fill="#2A1E30"
+            stroke="#EB071F"
+            stroke-width="1.5"
+          />
+          <text
+            x="90"
+            y="440"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#EB071F"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            PTZ CAMERA
+          </text>
+          <text
+            x="90"
+            y="453"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#6A3040"
+            text-anchor="middle"
+          >
+            Dahua PTZ83440
+          </text>
+          <text
+            x="90"
+            y="463"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A2030"
+            text-anchor="middle"
+          >
+            36V DC · RS-485 · Ethernet
+          </text>
+
+          <!-- ─── EMBEDDED GATEWAY ─── -->
+          <rect
+            x="200"
+            y="280"
+            width="140"
+            height="55"
+            rx="6"
+            fill="#1E2A40"
+            stroke="#6A90B0"
+            stroke-width="1.5"
+          />
+          <text
+            x="270"
+            y="300"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#8AB8D8"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            EMBEDDED GATEWAY
+          </text>
+          <text
+            x="270"
+            y="313"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            RS-485 Interface + ADC
+          </text>
+          <text
+            x="270"
+            y="325"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            Power Monitoring + Watchdog
+          </text>
+
+          <!-- ─── EDGE NODE ─── -->
+          <rect
+            x="200"
+            y="380"
+            width="140"
+            height="60"
+            rx="6"
+            fill="#162032"
+            stroke="#4A90D9"
+            stroke-width="2"
+          />
+          <text
+            x="270"
+            y="402"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#4A90D9"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            EDGE NODE
+          </text>
+          <text
+            x="270"
+            y="415"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#8FA3B1"
+            text-anchor="middle"
+          >
+            Industrial Mini PC
+          </text>
+          <text
+            x="270"
+            y="427"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            1-month local storage
+          </text>
+          <text
+            x="270"
+            y="439"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#2A4060"
+            text-anchor="middle"
+          >
+            ONVIF · FTP/SFTP · Schedule
+          </text>
+
+          <!-- ─── 4G ROUTER ─── -->
+          <rect
+            x="390"
+            y="380"
+            width="110"
+            height="55"
+            rx="6"
+            fill="#1E2A40"
+            stroke="#4A90D9"
+            stroke-width="1.5"
+          />
+          <text
+            x="445"
+            y="400"
+            font-family="DM Sans, sans-serif"
+            font-size="9"
+            fill="#8AB8D8"
+            text-anchor="middle"
+            letter-spacing="1"
+          >
+            4G ROUTER
+          </text>
+          <text
+            x="445"
+            y="413"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            Dual SIM · Wi-Fi
+          </text>
+          <text
+            x="445"
+            y="425"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            Failover Priority Mgmt
+          </text>
+          <text
+            x="445"
+            y="436"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#2A4060"
+            text-anchor="middle"
+          >
+            Ext. Antenna · 12V
+          </text>
+
+          <!-- ─── ARROWS: Power chain ─── -->
+          <!-- Solar → MPPT -->
+          <line
+            x1="90"
+            y1="90"
+            x2="90"
+            y2="118"
+            stroke="#4CAF50"
+            stroke-width="2"
+            marker-end="url(#arr-green)"
+          />
+          <!-- MPPT → Battery -->
+          <line
+            x1="90"
+            y1="164"
+            x2="90"
+            y2="193"
+            stroke="#4A90D9"
+            stroke-width="2"
+            marker-end="url(#arr)"
+          />
+          <!-- Battery → Power Dist -->
+          <line
+            x1="90"
+            y1="245"
+            x2="90"
+            y2="276"
+            stroke="#E8A020"
+            stroke-width="2"
+            marker-end="url(#arr-amber)"
+          />
+          <!-- Power Dist → DC-DC -->
+          <line
+            x1="90"
+            y1="316"
+            x2="90"
+            y2="348"
+            stroke="#8FA3B1"
+            stroke-width="1.5"
+            marker-end="url(#arr)"
+          />
+          <!-- DC-DC → Camera -->
+          <line
+            x1="90"
+            y1="388"
+            x2="90"
+            y2="420"
+            stroke="#A080D0"
+            stroke-width="1.5"
+            marker-end="url(#arr)"
+          />
+
+          <!-- Power to edge node and router from dist -->
+          <path
+            d="M 150 297 H 180 V 410 H 198"
+            fill="none"
+            stroke="#8FA3B1"
+            stroke-width="1.5"
+            stroke-dasharray="4,2"
+            marker-end="url(#arr)"
+          />
+          <!-- Power to 4G router -->
+          <path
+            d="M 150 297 H 380 V 407 H 388"
+            fill="none"
+            stroke="#8FA3B1"
+            stroke-width="1.5"
+            stroke-dasharray="4,2"
+            marker-end="url(#arr)"
+          />
+          <!-- Power to gateway -->
+          <path
+            d="M 150 297 H 180 V 307 H 198"
+            fill="none"
+            stroke="#8FA3B1"
+            stroke-width="1.5"
+            stroke-dasharray="4,2"
+            marker-end="url(#arr)"
+          />
+
+          <!-- MPPT → Gateway (RS-485 monitoring) -->
+          <path
+            d="M 150 140 H 180 V 292 H 198"
+            fill="none"
+            stroke="#4A90D9"
+            stroke-width="1"
+            stroke-dasharray="3,3"
+            marker-end="url(#arr)"
+          />
+
+          <!-- Camera → Gateway (RS-485) -->
+          <path
+            d="M 150 446 H 180 V 335 H 198"
+            fill="none"
+            stroke="#EB071F"
+            stroke-width="1"
+            stroke-dasharray="3,3"
+            marker-end="url(#arr-red)"
+          />
+
+          <!-- Camera → Edge Node (Ethernet) -->
+          <path
+            d="M 150 453 H 175 V 422 H 198"
+            fill="none"
+            stroke="#EB071F"
+            stroke-width="1.5"
+            marker-end="url(#arr-red)"
+          />
+
+          <!-- Gateway ↔ Edge Node -->
+          <line
+            x1="270"
+            y1="335"
+            x2="270"
+            y2="378"
+            stroke="#6A90B0"
+            stroke-width="1.5"
+            marker-end="url(#arr)"
+          />
+
+          <!-- Edge Node → 4G Router -->
+          <line
+            x1="340"
+            y1="410"
+            x2="388"
+            y2="410"
+            stroke="#4A90D9"
+            stroke-width="1.5"
+            marker-end="url(#arr)"
+          />
+
+          <!-- 4G Router → Internet cloud -->
+          <path
+            d="M 500 407 H 530 V 145 H 576"
+            fill="none"
+            stroke="#4A90D9"
+            stroke-width="1.5"
+            marker-end="url(#arr)"
+          />
+
+          <!-- Internet → Server -->
+          <line
+            x1="638"
+            y1="181"
+            x2="660"
+            y2="218"
+            stroke="#4A90D9"
+            stroke-width="1.5"
+            marker-end="url(#arr)"
+          />
+
+          <!-- Server → DHM (dashed) -->
+          <line
+            x1="660"
+            y1="312"
+            x2="660"
+            y2="358"
+            stroke="#4A6274"
+            stroke-width="1"
+            stroke-dasharray="5,3"
+            marker-end="url(#arr)"
+          />
+
+          <!-- Local storage note -->
+          <rect
+            x="200"
+            y="468"
+            width="140"
+            height="28"
+            rx="4"
+            fill="#0F1A24"
+            stroke="#1E2D3D"
+            stroke-width="1"
+          />
+          <text
+            x="270"
+            y="481"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#4A6274"
+            text-anchor="middle"
+          >
+            256GB SSD — Local Buffer
+          </text>
+          <text
+            x="270"
+            y="491"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#2A3A4A"
+            text-anchor="middle"
+          >
+            1-month images when offline
+          </text>
+          <line
+            x1="270"
+            y1="440"
+            x2="270"
+            y2="466"
+            stroke="#1E2D3D"
+            stroke-width="1"
+            stroke-dasharray="3,2"
+          />
+
+          <!-- Legend -->
+          <rect
+            x="390"
+            y="468"
+            width="130"
+            height="68"
+            rx="4"
+            fill="#0F1A24"
+            stroke="#1E2D3D"
+            stroke-width="1"
+          />
+          <text
+            x="400"
+            y="482"
+            font-family="DM Sans, sans-serif"
+            font-size="7.5"
+            fill="#8FA3B1"
+          >
+            Legend
+          </text>
+          <line
+            x1="400"
+            y1="492"
+            x2="420"
+            y2="492"
+            stroke="#4CAF50"
+            stroke-width="2"
+          />
+          <text
+            x="425"
+            y="496"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A6274"
+          >
+            Solar/DC Power flow
+          </text>
+          <line
+            x1="400"
+            y1="505"
+            x2="420"
+            y2="505"
+            stroke="#4A90D9"
+            stroke-width="2"
+          />
+          <text
+            x="425"
+            y="509"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A6274"
+          >
+            Data / Ethernet
+          </text>
+          <line
+            x1="400"
+            y1="518"
+            x2="420"
+            y2="518"
+            stroke="#EB071F"
+            stroke-width="1.5"
+          />
+          <text
+            x="425"
+            y="522"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A6274"
+          >
+            Camera connections
+          </text>
+          <line
+            x1="400"
+            y1="530"
+            x2="420"
+            y2="530"
+            stroke="#4A6274"
+            stroke-width="1"
+            stroke-dasharray="3,2"
+          />
+          <text
+            x="425"
+            y="534"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A6274"
+          >
+            Future / ext. system
+          </text>
+
+          <!-- RS-485 label -->
+          <text
+            x="160"
+            y="390"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A6274"
+            transform="rotate(-90,160,390)"
+          >
+            RS-485
+          </text>
+          <!-- Ethernet label -->
+          <text
+            x="174"
+            y="432"
+            font-family="DM Sans, sans-serif"
+            font-size="7"
+            fill="#4A6274"
+          >
+            ETH
+          </text>
+
+          <!-- API label -->
+          <text
+            x="668"
+            y="338"
+            font-family="DM Sans, sans-serif"
+            font-size="8"
+            fill="#4A6274"
+          >
+            API
+          </text>
+        </svg>
+      </div>
+
+      <h3>Architecture Narrative</h3>
+      <p>
+        <strong>At each remote station:</strong> The PTZ camera is powered from
+        a 36V DC supply derived from the 12V battery bank via a dedicated DC-DC
+        boost converter. An industrial-grade edge node (mini PC) communicates
+        with the camera over Ethernet using the ONVIF protocol — controlling PTZ
+        positioning, triggering image captures on programmed schedules, storing
+        images locally, and uploading them to the central server via 4G/3G
+        cellular.
+      </p>
+      <p>
+        An <strong>embedded gateway</strong> sits alongside the edge node. It
+        reads the battery voltage and solar charge state from the MPPT
+        controller via RS-485/Modbus and provides this telemetry to the edge
+        node. The gateway also acts as a hardware watchdog, capable of
+        recovering the edge node from an unresponsive state — critical for
+        unattended remote installations.
+      </p>
+      <p>
+        The <strong>4G router</strong> provides internet connectivity with
+        dual-SIM failover. The edge node software manages transfer priority: it
+        uses the primary SIM by default, switches to the secondary SIM if the
+        connection drops, and queues unsent images locally (up to one month)
+        until connectivity resumes.
+      </p>
+      <p>
+        <strong>At the central server</strong> (hosted and maintained by Evon
+        Electric): all station images are received, indexed, and made accessible
+        through a web-based management platform. Station health, battery status,
+        and solar voltage are visible on a live dashboard. The server exposes a
+        REST API that DHM can integrate with under a separate engagement.
+      </p>
+
+      <hr class="section-divider" />
+
+      <!-- SITE CONDITIONS -->
+      <div class="section-label">03 · Site Conditions &amp; Assumptions</div>
+      <h2>Declared Assumptions — Valid for All 74 Stations</h2>
+
+      <p>
+        This scope of work is prepared on the basis of the following site
+        assumptions. Deviations from these assumptions will require a scope
+        revision and supplementary quotation.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Assumption</th>
+            <th>Our Commitment / Implication</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A1</td>
+            <td>
+              Solar panel(s) of ≥200W capacity are already installed and
+              mechanically mounted at each station.
+            </td>
+            <td>
+              Solar panels and their mounting structure are excluded from our
+              supply. We will connect our MPPT charge controller to the existing
+              solar array.
+            </td>
+            <td><span class="tag tag-assumed">Assumed</span></td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>
+              A weatherproof, lockable enclosure (NEMA 4 / IP66 rated) exists at
+              each station to house battery packs and power electronics.
+            </td>
+            <td>
+              Interior mounting only. If a compliant enclosure is absent, one
+              must be procured separately — cost to be quoted on request.
+            </td>
+            <td><span class="tag tag-assumed">Assumed</span></td>
+          </tr>
+          <tr>
+            <td>A3</td>
+            <td>
+              Conduit or protected cable routing from the solar panel array to
+              the power enclosure is in place.
+            </td>
+            <td>
+              We will pull and terminate cables within the conduit. If conduit
+              is absent, installation cost will increase.
+            </td>
+            <td><span class="tag tag-assumed">Assumed</span></td>
+          </tr>
+          <tr>
+            <td>A4</td>
+            <td>
+              A camera mounting pedestal is installed or will be installed by
+              the main contractor. Conduit or cable raceway from the camera pole
+              to the power enclosure is in place.
+            </td>
+            <td>
+              Camera cabling (power, Ethernet, RS-485) will be pulled through
+              existing conduit/raceway. Cabling from camera to the enclosure is
+              our responsibility; the pathway is assumed to exist.
+            </td>
+            <td><span class="tag tag-assumed">Assumed</span></td>
+          </tr>
+          <tr>
+            <td>A5</td>
+            <td>
+              Adequate physical space exists within the enclosure to mount the
+              edge node, gateway, power distribution, and cabling.
+            </td>
+            <td>
+              Equipment layout will be provided pre-installation. We do not
+              supply the enclosure itself.
+            </td>
+            <td><span class="tag tag-assumed">Assumed</span></td>
+          </tr>
+          <tr>
+            <td>A6</td>
+            <td>
+              The PTZ camera (Dahua PTZ83440-HNF-PA or equivalent as specified)
+              will be provided per station by the procuring authority / main
+              contractor.
+            </td>
+            <td>
+              We commission, integrate, and configure the supplied camera.
+              Camera procurement cost is excluded.
+            </td>
+            <td><span class="tag tag-supplied">Supplied by Others</span></td>
+          </tr>
+          <tr>
+            <td>A7</td>
+            <td>
+              No cabling, electrical wiring, or electronic equipment is
+              currently installed inside the enclosure or along the camera pole
+              run.
+            </td>
+            <td>
+              Full wiring, termination, and commissioning is included in this
+              scope. All internal wiring materials are supplied by us.
+            </td>
+            <td><span class="tag tag-note">Note</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout amber">
+        <strong>Important Note on Site Readiness</strong>
+        Prior to each installation visit, Evon Electric will conduct a brief
+        remote or on-site site survey to confirm the assumptions above. If
+        significant deviations are identified (e.g., enclosure absent, conduit
+        incomplete), the affected station(s) will be flagged and a supplementary
+        cost will be issued before work proceeds.
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- POWER SYSTEM ANALYSIS -->
+      <div class="section-label">04 · Power System — Critical Analysis</div>
+      <h2>Power Budget &amp; Battery Sizing</h2>
+
+      <p>
+        Given the fully solar-and-battery powered operating environment, power
+        management is a
+        <strong>design-critical element</strong> of this system. The following
+        analysis has been conducted to ensure the station can remain operational
+        for a minimum of
+        <strong>3 consecutive days without solar input</strong>, as mandated by
+        the technical requirements.
+      </p>
+
+      <h3>Station Power Consumption (Per Site)</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Device</th>
+            <th>Input Voltage</th>
+            <th>Typical Draw</th>
+            <th>Peak Draw</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PTZ Camera (Dahua PTZ83440)</td>
+            <td>36V DC (via converter)</td>
+            <td>22W</td>
+            <td>65W</td>
+            <td>19W basic; 60W max (PTZ + IR on). Converter losses added.</td>
+          </tr>
+          <tr>
+            <td>Industrial Edge Node (Mini PC)</td>
+            <td>12V DC</td>
+            <td>14W</td>
+            <td>20W</td>
+            <td>Typical idle with occasional read/write activity</td>
+          </tr>
+          <tr>
+            <td>4G Cellular Router (Dual SIM)</td>
+            <td>12V DC</td>
+            <td>8W</td>
+            <td>13W</td>
+            <td>Must remain powered continuously for remote access</td>
+          </tr>
+          <tr>
+            <td>Embedded Gateway</td>
+            <td>5V / 12V</td>
+            <td>3W</td>
+            <td>4W</td>
+            <td>RS-485 polling, watchdog logic</td>
+          </tr>
+          <tr>
+            <td>DC-DC Boost Converter (losses)</td>
+            <td>12V input</td>
+            <td>1.5W</td>
+            <td>3W</td>
+            <td>~92% efficiency at typical load</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"><strong>Total Typical Load</strong></td>
+            <td class="cost-col">~48.5 W</td>
+            <td class="cost-col">~105 W</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="power-warning">
+        <h4>⚡ Critical: Battery Bank Sizing Requirement</h4>
+        <p>
+          <strong>3-day backup energy required:</strong> 48.5W × 72 hours =
+          3,492 Wh
+        </p>
+        <p>
+          <strong
+            >Usable energy from a single 12V 100Ah LiFePO₄ (80% DOD):</strong
+          >
+          960 Wh
+        </p>
+        <p>
+          <strong>Batteries required to meet 3-day mandate:</strong> 3,492 ÷ 960
+          ≈ 3.6 → <strong>Minimum 4 units in parallel</strong>
+        </p>
+        <p style="margin-top: 10px; color: rgba(255, 255, 255, 0.5)">
+          The requirement specification cites 12V 100Ah as a baseline. With
+          smart power scheduling on the edge node (reduced camera activity at
+          night, optimized capture intervals), 4× 100Ah provides approximately
+          3.2 days of backup. For full 3-day compliance with margin,
+          <strong>we recommend 4× 12V 100Ah LiFePO₄</strong> paired with
+          edge-node-managed power scheduling.
+        </p>
+      </div>
+
+      <h3>Recommended Battery Configuration</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Specification</th>
+            <th>Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Battery type</td>
+            <td>LiFePO₄ (Lithium Iron Phosphate)</td>
+            <td>
+              Cycle life &gt;2,000, safer chemistry, wide temperature range
+            </td>
+          </tr>
+          <tr>
+            <td>Nominal voltage</td>
+            <td>12V</td>
+            <td>Matches requirement and existing solar infrastructure</td>
+          </tr>
+          <tr>
+            <td>Capacity per unit</td>
+            <td>100Ah</td>
+            <td>As per requirement specification</td>
+          </tr>
+          <tr>
+            <td>Quantity (parallel)</td>
+            <td>4 units = 400Ah bank</td>
+            <td>Calculated for 3-day mandate with power management</td>
+          </tr>
+          <tr>
+            <td>Integrated BMS</td>
+            <td>Required</td>
+            <td>Overcharge, over-discharge, thermal protection</td>
+          </tr>
+          <tr>
+            <td>Operating temperature</td>
+            <td>−20°C to +60°C (charge); −20°C to +60°C (discharge)</td>
+            <td>Meets and exceeds specification</td>
+          </tr>
+          <tr>
+            <td>Cycle life</td>
+            <td>&gt;2,000 cycles @ 80% DOD</td>
+            <td>Meets specification requirement</td>
+          </tr>
+          <tr>
+            <td>Warranty</td>
+            <td>5 years</td>
+            <td>Meets specification requirement</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>MPPT Charge Controller</h3>
+      <p>
+        The MPPT controller to be supplied will be rated for
+        <strong>40A</strong>. While the requirement specifies 20A, a 40A
+        controller is recommended because:
+      </p>
+      <ul class="scope-list">
+        <li>
+          The 400Ah battery bank requires higher charge current for timely
+          recovery after 3-day cloud periods.
+        </li>
+        <li>
+          A 40A controller supports up to 480W solar input at 12V —
+          accommodating potential future panel additions.
+        </li>
+        <li>
+          RS-485/Modbus communication port is required for battery and solar
+          voltage telemetry to the embedded gateway.
+        </li>
+      </ul>
+      <p class="inline-note">
+        If a solar array greater than 240W is installed per site, a 20A
+        controller would result in charge current limiting and prolonged
+        recovery times.
+      </p>
+
+      <hr class="section-divider" />
+
+      <!-- PER SITE SCOPE -->
+      <div class="section-label">
+        05 · Per-Site Scope of Work (×74 Stations)
+      </div>
+      <h2>Hardware Supply — Bill of Materials (Per Station)</h2>
+      <p class="inline-note">
+        Camera is supplied by the procuring authority. All items below are
+        supplied and installed by Evon Electric.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Specification</th>
+            <th>Qty</th>
+            <th class="cost-col">Unit Cost (USD)</th>
+            <th class="cost-col">Total (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Industrial Edge Node (Mini PC)</td>
+            <td>
+              Fanless, Intel N-series, 8GB RAM, 256GB NVMe SSD, 12V DC input,
+              −20°C to +70°C operation, serial/USB ports
+            </td>
+            <td>1</td>
+            <td class="cost-col">280</td>
+            <td class="cost-col">280</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>4G Industrial Router</td>
+            <td>
+              Dual-SIM (nano), Wi-Fi 2.4/5GHz, 12V DC, SMA antenna ports ×4,
+              programmable failover, OpenWRT or equivalent
+            </td>
+            <td>1</td>
+            <td class="cost-col">130</td>
+            <td class="cost-col">130</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Embedded Power &amp; RS-485 Gateway</td>
+            <td>
+              Microcontroller-based (industrial grade), RS-485 transceiver,
+              analog voltage inputs, USB/UART to edge node, watchdog output for
+              edge node reboot
+            </td>
+            <td>1</td>
+            <td class="cost-col">80</td>
+            <td class="cost-col">80</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>LiFePO₄ Battery — 12V 100Ah</td>
+            <td>
+              Integrated BMS, cycle life &gt;2,000, operating temp −20°C to
+              60°C, 5-year warranty
+            </td>
+            <td>4</td>
+            <td class="cost-col">210</td>
+            <td class="cost-col">840</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>MPPT Solar Charge Controller — 40A</td>
+            <td>
+              Max PV input 520W/12V, RS-485/Modbus interface, LCD or LED
+              indicators, IP32+ rated
+            </td>
+            <td>1</td>
+            <td class="cost-col">90</td>
+            <td class="cost-col">90</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>DC-DC Boost Converter (12V → 36V)</td>
+            <td>
+              120W rated, input 10–15V, output 36V regulated, ≥92% efficiency,
+              potted/conformal coated for humidity
+            </td>
+            <td>1</td>
+            <td class="cost-col">45</td>
+            <td class="cost-col">45</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>DC Power Distribution Module</td>
+            <td>
+              12V fused bus bar, individual branch fuses (5A, 10A, 20A), DIN
+              rail mount
+            </td>
+            <td>1</td>
+            <td class="cost-col">38</td>
+            <td class="cost-col">38</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>4-Port Industrial Ethernet Switch</td>
+            <td>12V powered, DIN rail, −20°C to +60°C, unmanaged</td>
+            <td>1</td>
+            <td class="cost-col">40</td>
+            <td class="cost-col">40</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>4G External Omni Antenna</td>
+            <td>
+              Omnidirectional, 5 dBi gain, N-type male, 3m LMR-200 cable,
+              outdoor UV-rated
+            </td>
+            <td>1</td>
+            <td class="cost-col">28</td>
+            <td class="cost-col">28</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Power Cable (12V system wiring)</td>
+            <td>
+              6mm² twin-core, 10m per site, lugs and heat shrink, fuse holder at
+              source
+            </td>
+            <td>1 lot</td>
+            <td class="cost-col">32</td>
+            <td class="cost-col">32</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Camera Power Cable (36V run)</td>
+            <td>
+              3-core shielded, 10m, rated for outdoor UV, terminated at camera
+              connector
+            </td>
+            <td>1 lot</td>
+            <td class="cost-col">18</td>
+            <td class="cost-col">18</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Ethernet Cable (CAT6)</td>
+            <td>
+              Outdoor-rated CAT6, 15m per site, shielded, crimped RJ45 both ends
+            </td>
+            <td>1 lot</td>
+            <td class="cost-col">14</td>
+            <td class="cost-col">14</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>RS-485 Signal Cable</td>
+            <td>Twisted pair shielded, 5m per site (MPPT to gateway)</td>
+            <td>1 lot</td>
+            <td class="cost-col">8</td>
+            <td class="cost-col">8</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Weatherproof Cable Glands &amp; Connectors</td>
+            <td>
+              IP67-rated glands (M16, M20), waterproof DC connectors (Anderson
+              PP45, MC4 compatible)
+            </td>
+            <td>1 lot</td>
+            <td class="cost-col">22</td>
+            <td class="cost-col">22</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>DIN Rail, Cable Tray &amp; Mounting Hardware</td>
+            <td>
+              35mm DIN rail sections, cable tray, mounting screws, P-clips for
+              cable routing
+            </td>
+            <td>1 lot</td>
+            <td class="cost-col">22</td>
+            <td class="cost-col">22</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Miscellaneous Consumables</td>
+            <td>
+              Cable ties, adhesive labels, spiral wrap, insulation tape,
+              conformal spray
+            </td>
+            <td>1 lot</td>
+            <td class="cost-col">18</td>
+            <td class="cost-col">18</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <strong>Hardware Subtotal (per station, excl. camera)</strong>
+            </td>
+            <td class="cost-col"><strong>1,705</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <h3>Why the Edge Node is Necessary — Technical Justification</h3>
+      <p>
+        The supplied PTZ camera is a network video surveillance device capable
+        of receiving ONVIF commands and transmitting video streams. However, the
+        full set of operational requirements for this deployment — time-lapse
+        scheduling, multi-server parallel upload, offline buffering,
+        connectivity failover, and power telemetry — are
+        <strong>not native camera functions</strong>. The edge node is therefore
+        an essential system component, not an optional addition.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Requirement</th>
+            <th>Camera Native?</th>
+            <th>Who Handles It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Programmed time-lapse at different PTZ presets</td>
+            <td><span class="tag tag-gap">No</span></td>
+            <td>Edge Node software + camera ONVIF API</td>
+          </tr>
+          <tr>
+            <td>Dual-server parallel image transfer (FTP/SFTP/FTPS)</td>
+            <td><span class="tag tag-gap">No</span></td>
+            <td>Edge Node manages two upload channels</td>
+          </tr>
+          <tr>
+            <td>1-month offline storage with resume-on-reconnect</td>
+            <td><span class="tag tag-gap">No</span></td>
+            <td>Edge Node (256GB SSD) manages queue</td>
+          </tr>
+          <tr>
+            <td>Dual-SIM 3G/4G connectivity with failover priority</td>
+            <td><span class="tag tag-gap">No</span></td>
+            <td>Edge Node + 4G Router, software-managed</td>
+          </tr>
+          <tr>
+            <td>Online reconfiguration without fixed IP</td>
+            <td><span class="tag tag-note">Partial</span></td>
+            <td>Edge Node VPN/DDNS tunnel for reliable remote access</td>
+          </tr>
+          <tr>
+            <td>Solar voltage &amp; battery voltage monitoring</td>
+            <td><span class="tag tag-gap">No</span></td>
+            <td>Embedded Gateway → Edge Node → Server</td>
+          </tr>
+          <tr>
+            <td>Power supply to camera (36V from 12V battery)</td>
+            <td><span class="tag tag-gap">N/A</span></td>
+            <td>DC-DC converter — dedicated hardware</td>
+          </tr>
+          <tr>
+            <td>360° panoramic image capture (preset-based stitching)</td>
+            <td><span class="tag tag-note">Partial</span></td>
+            <td>Edge Node orchestrates preset sequence, server stitches</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="section-divider" />
+
+      <!-- EMBEDDED GATEWAY -->
+      <div class="section-label">05b · Embedded Gateway Scope</div>
+      <h2>Embedded Gateway — Scope &amp; Firmware</h2>
+
+      <p>
+        The embedded gateway is a dedicated microcontroller-based hardware
+        module that operates independently of the edge node. It provides two
+        critical functions: <strong>power telemetry</strong> and
+        <strong>system resilience</strong>.
+      </p>
+
+      <h3>Gateway Responsibilities</h3>
+      <ol class="scope-list">
+        <li>
+          Communicate with the MPPT charge controller via RS-485 (Modbus RTU) to
+          read solar input voltage, battery voltage, charge current, and
+          state-of-charge.
+        </li>
+        <li>
+          Relay power telemetry to the edge node via USB serial at configurable
+          polling intervals (default: every 5 minutes).
+        </li>
+        <li>
+          Generate local hardware alerts (low-battery threshold) for on-site
+          indication.
+        </li>
+        <li>
+          Act as hardware watchdog for the edge node — if the edge node becomes
+          unresponsive for a configurable period, the gateway cycles its power
+          supply, forcing a clean restart.
+        </li>
+        <li>
+          Log power telemetry to onboard flash (minimum 7 days of history) as a
+          fallback if the edge node is offline.
+        </li>
+      </ol>
+
+      <div class="callout green">
+        <strong>Resilience Design Note</strong>
+        At remote, unattended stations, software crashes or OS-level hangs on
+        the edge node would otherwise require physical intervention. The
+        hardware watchdog function of the embedded gateway ensures the system
+        self-recovers automatically, materially reducing the need for on-site
+        maintenance visits.
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- INSTALLATION & COMMISSIONING PER SITE -->
+      <div class="section-label">
+        06 · Installation &amp; Commissioning (Per Site)
+      </div>
+      <h2>On-Site Installation &amp; Commissioning Scope</h2>
+
+      <h3>Works Included per Station</h3>
+      <ol class="scope-list">
+        <li>
+          <strong>Power system installation:</strong> Mount MPPT controller and
+          battery bank inside weatherproof enclosure. Wire solar input from
+          existing array, battery output bus, and all branch circuits per the
+          power distribution design.
+        </li>
+        <li>
+          <strong>DC-DC converter installation:</strong> Mount and wire 12V→36V
+          boost converter. Verify output voltage before connecting camera power.
+        </li>
+        <li>
+          <strong>Camera power &amp; data cabling:</strong> Pull 36V power cable
+          and CAT6 Ethernet cable from enclosure to camera head through existing
+          conduit/raceway. Terminate and verify continuity.
+        </li>
+        <li>
+          <strong>Edge node &amp; gateway installation:</strong> Mount edge node
+          and embedded gateway on DIN rail inside enclosure. Connect to power
+          bus, Ethernet switch, and RS-485 network.
+        </li>
+        <li>
+          <strong>4G router installation:</strong> Mount router inside
+          enclosure, route antenna cable to external antenna mounting point,
+          connect dual SIMs and configure failover.
+        </li>
+        <li>
+          <strong>Edge node software deployment:</strong> Flash pre-built edge
+          application image, configure station ID, camera ONVIF credentials,
+          upload server addresses, and PTZ presets.
+        </li>
+        <li>
+          <strong>Gateway firmware programming:</strong> Flash firmware,
+          configure Modbus address of MPPT controller, set battery alert
+          thresholds.
+        </li>
+        <li>
+          <strong>Camera integration test:</strong> Confirm ONVIF connectivity,
+          execute each programmed PTZ preset, verify image capture and FTP
+          upload to both servers.
+        </li>
+        <li>
+          <strong>Connectivity verification:</strong> Test primary SIM
+          connectivity and simulate failover to secondary SIM. Verify image
+          upload continuity during switchover.
+        </li>
+        <li>
+          <strong>Power telemetry verification:</strong> Confirm battery voltage
+          and solar voltage data appears on central management dashboard within
+          5 minutes of installation.
+        </li>
+        <li>
+          <strong>Remote access verification:</strong> Confirm remote
+          reconfiguration of camera PTZ presets from central server without
+          fixed IP dependency.
+        </li>
+        <li>
+          <strong>Commissioning documentation:</strong> Complete per-station
+          commissioning sheet (station ID, GPS, installed equipment serial
+          numbers, photos, test results). Upload to project record.
+        </li>
+      </ol>
+
+      <h3>Commissioning Team &amp; Time Commitment</h3>
+      <p>
+        Each station installation will be carried out by a
+        <strong>team of 2 trained engineers</strong> over a typical duration of
+        <strong>1.5 to 2 field days per station</strong>. Given the remote
+        geography of deployment locations, travel and accommodation are
+        significant cost and logistics factors.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cost Component</th>
+            <th>Basis</th>
+            <th class="cost-col">Estimated Cost / Station (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Engineer manpower</td>
+            <td>2 engineers × 2 days × day rate</td>
+            <td class="cost-col">400</td>
+          </tr>
+          <tr>
+            <td>Travel (remote locations)</td>
+            <td>Avg. vehicle hire / fuel / transport per station</td>
+            <td class="cost-col">260</td>
+          </tr>
+          <tr>
+            <td>Accommodation &amp; per diem</td>
+            <td>2 persons × 2 nights × lodging + daily allowance</td>
+            <td class="cost-col">140</td>
+          </tr>
+          <tr>
+            <td>Site contingency (10%)</td>
+            <td>Unexpected on-site conditions, minor rework</td>
+            <td class="cost-col">80</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">
+              <strong>Commissioning Cost (per station)</strong>
+            </td>
+            <td class="cost-col"><strong>880</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <div class="callout amber">
+        <strong>Deployment Planning Note</strong>
+        The 74 stations will be grouped into clusters by geographic proximity
+        for efficient deployment. Detailed deployment scheduling, including a
+        phased rollout timeline, will be prepared during project kickoff. The
+        costs above are based on average travel distances; stations in
+        particularly difficult terrain or requiring helicopter access will be
+        evaluated individually.
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- SOFTWARE & FIRMWARE -->
+      <div class="section-label">07 · Software &amp; Firmware Development</div>
+      <h2>Software Development — One-Time Scope</h2>
+
+      <p>
+        All software components listed below are developed as part of this
+        engagement. The development cost is a
+        <strong>one-time charge</strong> and covers the full deployment of 74
+        stations plus the central management platform.
+        <strong
+          >Bug fixes and corrective maintenance arising from defects in
+          delivered software are included at no additional cost for the duration
+          of the 3-year service term.</strong
+        >
+      </p>
+
+      <h3>A. Edge Node Application (Per-Station Software)</h3>
+      <p>
+        Deployed on the industrial mini PC at each station. Manages all on-site
+        operations.
+      </p>
+      <ol class="scope-list">
+        <li>
+          <strong>Camera scheduling engine:</strong> Programmable time-lapse
+          schedules per PTZ preset — configurable intervals per direction (e.g.,
+          river view every 10 min, panoramic every 30 min, staff gauge hourly).
+          Persistent schedule survives reboots.
+        </li>
+        <li>
+          <strong>ONVIF camera interface:</strong> PTZ control, image capture,
+          live stream retrieval via ONVIF Profile S/G/T and camera HTTP API.
+        </li>
+        <li>
+          <strong>Offline storage manager:</strong> Indexed local image storage
+          on SSD with automatic expiry. Queues failed uploads for retry; manages
+          a rolling 30-day local archive.
+        </li>
+        <li>
+          <strong>Multi-server upload client:</strong> Simultaneous
+          FTP/SFTP/FTPS upload to two configured servers. Per-file checksum
+          verification, retry logic, and upload status reporting.
+        </li>
+        <li>
+          <strong>Connectivity manager:</strong> Monitors network state;
+          implements prioritized failover (Wi-Fi → SIM1 3G/4G → SIM2 GPRS) as
+          configurable policy. Logs connectivity events.
+        </li>
+        <li>
+          <strong>Telemetry relay:</strong> Reads power data from embedded
+          gateway and forwards to central server on a regular interval.
+        </li>
+        <li>
+          <strong>Remote configuration interface:</strong> Secure remote access
+          (VPN tunnel or DDNS-based) allowing camera preset reprogramming,
+          schedule updates, and system parameter changes without physical access
+          or fixed IP.
+        </li>
+        <li>
+          <strong>Health monitoring &amp; heartbeat:</strong> Periodic heartbeat
+          to central server; local self-diagnostics (disk space, camera
+          reachability, network state).
+        </li>
+      </ol>
+
+      <h3>B. Embedded Gateway Firmware</h3>
+      <ol class="scope-list">
+        <li>
+          Modbus RTU communication with MPPT controller (RS-485); reads voltage,
+          current, SoC, temperature.
+        </li>
+        <li>USB serial protocol to edge node for telemetry reporting.</li>
+        <li>Configurable low-battery threshold triggers and alert output.</li>
+        <li>
+          Hardware watchdog logic: configurable timeout, controlled edge node
+          power cycle.
+        </li>
+        <li>Onboard data logging (7-day ring buffer in flash).</li>
+        <li>Field-updatable firmware via edge node USB interface.</li>
+      </ol>
+
+      <h3>C. Central Camera Management Platform</h3>
+      <p>
+        A web-based platform accessible to authorised users. Hosted on the Evon
+        Electric managed server.
+      </p>
+      <ol class="scope-list">
+        <li>
+          <strong>Image reception &amp; ingestion:</strong> Receives images from
+          all stations via FTP/SFTP; auto-indexes by station ID, direction,
+          capture time, and metadata.
+        </li>
+        <li>
+          <strong>Database &amp; storage management:</strong> Structured storage
+          with search by station, direction, date/time range, and image type.
+          Tiered archiving for long-term retention.
+        </li>
+        <li>
+          <strong>Web viewer &amp; image comparison:</strong> Browsable image
+          gallery per station; side-by-side temporal comparison of images from
+          the same direction; zoom tools.
+        </li>
+        <li>
+          <strong>Map display:</strong> All 74 stations displayed on an
+          interactive map with status indicators (online/offline, last image
+          time).
+        </li>
+        <li>
+          <strong>Power monitoring dashboard:</strong> Live and historical
+          battery voltage, solar voltage, and state-of-charge per station. Alert
+          panel for stations below threshold or offline.
+        </li>
+        <li>
+          <strong>Alerts &amp; notifications:</strong> Email notifications for
+          low battery, communication failure, and configurable image-gap alerts.
+        </li>
+        <li>
+          <strong>User management:</strong> Role-based access control (admin,
+          operator, viewer).
+        </li>
+        <li>
+          <strong>REST API:</strong> Documented API for image retrieval, station
+          status, and telemetry — available for future DHM integration.
+        </li>
+        <li>
+          <strong>Remote camera configuration portal:</strong> Web UI to update
+          PTZ presets, capture schedules, and upload settings on any station
+          remotely.
+        </li>
+      </ol>
+
+      <div class="callout blue">
+        <strong>Station Limit</strong>
+        The platform is designed and infrastructure-sized for up to
+        <strong>100 concurrent active stations</strong>. The term "unlimited
+        stations" is a functional description implying no software-imposed cap;
+        it does not imply infinite infrastructure scaling. Additional stations
+        beyond 100 can be accommodated subject to a capacity review and
+        infrastructure upgrade, to be quoted separately.
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Software Component</th>
+            <th>Type</th>
+            <th class="cost-col">Development Cost (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Edge Node Application</td>
+            <td>One-time, deployed on all 74 nodes</td>
+            <td class="cost-col">7,500</td>
+          </tr>
+          <tr>
+            <td>Embedded Gateway Firmware</td>
+            <td>One-time, deployed on all 74 gateways</td>
+            <td class="cost-col">4,500</td>
+          </tr>
+          <tr>
+            <td>Central Management Platform</td>
+            <td>One-time, web + backend + API</td>
+            <td class="cost-col">22,000</td>
+          </tr>
+          <tr>
+            <td>System Integration &amp; QA Testing</td>
+            <td>End-to-end testing across full stack</td>
+            <td class="cost-col">4,000</td>
+          </tr>
+          <tr>
+            <td>Technical Documentation &amp; User Manuals</td>
+            <td>Admin guide, API docs, field manual</td>
+            <td class="cost-col">2,000</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">
+              <strong>Total Software Development (one-time)</strong>
+            </td>
+            <td class="cost-col"><strong>40,000</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p>
+        Software deployment and configuration at each site is included in the
+        per-site commissioning cost (Section 06). The development cost above
+        covers creation, testing, and documentation of all software and
+        firmware.
+      </p>
+
+      <hr class="section-divider" />
+
+      <!-- CENTRAL SERVER -->
+      <div class="section-label">08 · Central Management Server</div>
+      <h2>Server Infrastructure — Requirements &amp; Recommendation</h2>
+
+      <p>
+        The central image management platform requires a dedicated server with
+        adequate compute, storage, and network capacity to support all 74
+        stations over a 3-year operational period. The server is maintained
+        exclusively by Evon Electric for the purpose of this deployment.
+      </p>
+
+      <h3>Server Capacity Calculation</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+            <th>Basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Images per station per day</td>
+            <td>~250–350</td>
+            <td>
+              River view (10-min), panoramic (30-min), gauge (hourly), custom
+              presets
+            </td>
+          </tr>
+          <tr>
+            <td>Average image size</td>
+            <td>~2.5 MB</td>
+            <td>4MP JPEG at standard compression</td>
+          </tr>
+          <tr>
+            <td>Daily data ingestion (74 stations)</td>
+            <td>~46–65 GB/day</td>
+            <td>300 images × 2.5MB × 74</td>
+          </tr>
+          <tr>
+            <td>Annual storage requirement</td>
+            <td>~17–24 TB/year</td>
+            <td>Including metadata, thumbnails, index overhead</td>
+          </tr>
+          <tr>
+            <td>3-year storage requirement</td>
+            <td>~55–75 TB</td>
+            <td>With 20% headroom allocation</td>
+          </tr>
+          <tr>
+            <td>Concurrent inbound connections</td>
+            <td>74 (max)</td>
+            <td>One per station uploading images</td>
+          </tr>
+          <tr>
+            <td>Peak upload bandwidth</td>
+            <td>~150 KB/s</td>
+            <td>74 stations × 1 image/10min average = modest load</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Recommended Server Specification</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Specification</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CPU</td>
+            <td>
+              Intel Xeon E-2300 series or AMD EPYC embedded, 8 cores / 16
+              threads
+            </td>
+            <td>Image processing, web serving, database queries</td>
+          </tr>
+          <tr>
+            <td>RAM</td>
+            <td>64 GB ECC DDR4</td>
+            <td>Database cache + web application headroom</td>
+          </tr>
+          <tr>
+            <td>Boot/OS Storage</td>
+            <td>2× 1TB NVMe SSD (RAID-1 mirror)</td>
+            <td>OS + application + active database</td>
+          </tr>
+          <tr>
+            <td>Image Storage</td>
+            <td>8× 10TB NAS/enterprise HDD in RAID-6</td>
+            <td>~60TB usable — covers 3 years with margin</td>
+          </tr>
+          <tr>
+            <td>Network</td>
+            <td>1 Gbps dedicated uplink</td>
+            <td>Sufficient for all 74 station uploads + web traffic</td>
+          </tr>
+          <tr>
+            <td>Power</td>
+            <td>Redundant PSU; UPS backup ≥ 30 min</td>
+            <td>Availability requirement</td>
+          </tr>
+          <tr>
+            <td>OS</td>
+            <td>Ubuntu Server LTS</td>
+            <td>Stable, well-supported, no license cost</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Hosting Option Comparison</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Approach</th>
+            <th class="cost-col">Year 1 Cost (USD)</th>
+            <th class="cost-col">3-Year TCO (USD)</th>
+            <th>Recommendation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A — Dedicated Physical Server + Co-location (Nepal IDC)</td>
+            <td>
+              Own hardware, co-located at Nepal-based data center
+              (WorldLink/Vianet IDC)
+            </td>
+            <td class="cost-col">15,200</td>
+            <td class="cost-col">26,000</td>
+            <td><span class="tag tag-meets">Recommended</span></td>
+          </tr>
+          <tr>
+            <td>B — Cloud VM (AWS/Azure Southeast Asia)</td>
+            <td>Rented virtual infrastructure, pay-as-you-go</td>
+            <td class="cost-col">7,800</td>
+            <td class="cost-col">23,400</td>
+            <td><span class="tag tag-note">Alternative</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout green">
+        <strong>Recommendation: Option A — Physical Server</strong>
+        Dedicated hardware at a Nepal-based co-location facility is recommended
+        for this deployment. It provides better 3-year cost efficiency, keeps
+        data within Nepal's jurisdiction, avoids dependency on foreign cloud
+        provider pricing changes, and gives full control over storage capacity
+        expansion. Initial hardware cost is included in the first-year pricing.
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Server Cost Breakdown (Option A)</th>
+            <th class="cost-col">Cost (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Server hardware (rack unit, CPU, RAM, NVMe SSD)</td>
+            <td class="cost-col">5,500</td>
+          </tr>
+          <tr>
+            <td>10TB enterprise HDD × 8 (image storage array)</td>
+            <td class="cost-col">3,200</td>
+          </tr>
+          <tr>
+            <td>RAID controller + UPS unit</td>
+            <td class="cost-col">800</td>
+          </tr>
+          <tr>
+            <td>Server setup, OS installation, and configuration</td>
+            <td class="cost-col">600</td>
+          </tr>
+          <tr>
+            <td>Co-location facility (Year 1 — 12 months)</td>
+            <td class="cost-col">3,600</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Server Total — Year 1</strong></td>
+            <td class="cost-col"><strong>13,700</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p class="inline-note">
+        Years 2 and 3: co-location fee only (~$3,600/year). Storage expansion
+        may be required in Year 3 depending on actual data volumes.
+      </p>
+
+      <div class="callout">
+        <strong>Note on DHM Integration</strong>
+        This server and the Camera Management Platform are entirely separate
+        from any DHM-owned infrastructure. The agreement covers image
+        acquisition, management, display, and API access as described.
+        Connection of the central platform to DHM's internal systems (intranet,
+        HYDIMS, or similar) is explicitly out of scope here and will be
+        addressed under a separate technical and commercial agreement.
+      </div>
+
+      <hr class="section-divider" />
+
+      <!-- COST SUMMARY -->
+      <div class="section-label">09 · Cost Summary</div>
+      <h2>Total Cost of Engagement</h2>
+
+      <h3>Per-Station Cost (×74)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Line Item</th>
+            <th>Basis</th>
+            <th class="cost-col">Per Station (USD)</th>
+            <th class="cost-col">×74 Total (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hardware supply (BOM, excl. camera)</td>
+            <td>Section 05</td>
+            <td class="cost-col">1,705</td>
+            <td class="cost-col">126,170</td>
+          </tr>
+          <tr>
+            <td>Installation &amp; commissioning</td>
+            <td>Section 06</td>
+            <td class="cost-col">880</td>
+            <td class="cost-col">65,120</td>
+          </tr>
+          <tr>
+            <td>Software deployment (per node)</td>
+            <td>Edge node config, testing</td>
+            <td class="cost-col">350</td>
+            <td class="cost-col">25,900</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">
+              <strong>Per-Station Subtotal (all 74 stations)</strong>
+            </td>
+            <td class="cost-col"><strong>2,935</strong></td>
+            <td class="cost-col"><strong>217,190</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <h3>One-Time Central System Costs</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Line Item</th>
+            <th class="cost-col">Cost (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Software &amp; firmware development (all components)</td>
+            <td class="cost-col">40,000</td>
+          </tr>
+          <tr>
+            <td>Central server — hardware, setup &amp; Year 1 co-location</td>
+            <td class="cost-col">13,700</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>One-Time Central System Subtotal</strong></td>
+            <td class="cost-col"><strong>53,700</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <table style="margin-top: 24px">
+        <thead>
+          <tr>
+            <th>Summary</th>
+            <th class="cost-col">USD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>74-station hardware &amp; commissioning</td>
+            <td class="cost-col">217,190</td>
+          </tr>
+          <tr>
+            <td>Software development &amp; central server</td>
+            <td class="cost-col">53,700</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td><strong>Total Engagement Value (3-Year Term)</strong></td>
+            <td class="cost-col"><strong>270,890</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p class="inline-note">
+        All costs are in USD. NPR equivalent available upon request at
+        prevailing exchange rate. Prices are exclusive of applicable taxes.
+      </p>
+
+      <hr class="section-divider" />
+
+      <!-- RECURRING COSTS -->
+      <div class="section-label">10 · Recurring Services &amp; AMC</div>
+      <h2>Ongoing Services, Warranty &amp; Annual Maintenance</h2>
+
+      <h3>Included in the 3-Year Service Term (No Additional Charge)</h3>
+      <ul class="scope-list">
+        <li>Central server hosting and operation (Years 1–3)</li>
+        <li>
+          Software bug fixes and corrective patches for all delivered software
+          components
+        </li>
+        <li>Remote diagnostics support (response within 2 business days)</li>
+        <li>
+          Hardware warranty coverage for all supplied components (per
+          manufacturer terms)
+        </li>
+        <li>
+          MPPT and battery bank: 5-year hardware warranty from manufacturers
+        </li>
+        <li>
+          Camera: 3-year warranty (manufacturer, coordinated through this
+          agreement)
+        </li>
+        <li>
+          Software updates limited to security patches and defect corrections;
+          feature additions are separate
+        </li>
+      </ul>
+
+      <h3>
+        Annual Maintenance Contract (AMC) — Applicable from Year 4 Onwards
+      </h3>
+      <table>
+        <thead>
+          <tr>
+            <th>AMC Component</th>
+            <th>Coverage</th>
+            <th class="cost-col">Annual Cost (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Per-station software maintenance (×74)</td>
+            <td>Software updates, remote monitoring, helpdesk</td>
+            <td class="cost-col">8,880</td>
+          </tr>
+          <tr>
+            <td>Central platform maintenance</td>
+            <td>Server operation, software updates, backup management</td>
+            <td class="cost-col">4,500</td>
+          </tr>
+          <tr>
+            <td>
+              Annual on-site inspection (1 visit per cluster, ~15 clusters)
+            </td>
+            <td>Hardware inspection, filter cleaning, battery health check</td>
+            <td class="cost-col">3,500</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">
+              <strong>Total AMC (Year 4 onwards, per annum)</strong>
+            </td>
+            <td class="cost-col"><strong>16,880</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <p class="inline-note">
+        AMC pricing is fixed for the first 2 years post-service-term. Subject to
+        review thereafter.
+      </p>
+
+      <div class="callout">
+        <strong>Server Co-location Included in AMC</strong>
+        From Year 4, the annual co-location fee (~$3,600) for the central server
+        is absorbed within the central platform maintenance line item of the
+        AMC. No separate billing for hosting.
+      </div>
+
+      <hr class="section-divider" />
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+     ANNEXURE A — CAMERA TECHNICAL ASSESSMENT
+═══════════════════════════════════════════════════════════════ -->
+    <div class="page page-break">
+      <div class="annex-header">
+        ⚠ <strong>Annexure A — Internal Technical Reference.</strong> This
+        section contains camera compliance analysis against the tender
+        specification. It is intended for our engineering team and technical
+        discussions with the procuring authority; it is not part of the
+        commercial offer.
+      </div>
+
+      <div class="section-label">Annexure A · Camera Technical Assessment</div>
+      <h2>Dahua PTZ83440-HNF-PA — Compliance Review Against Requirements</h2>
+
+      <p>
+        The following table maps the specified camera requirements against the
+        declared specifications of the Dahua DH-PTZ83440-HNF-PA. This analysis
+        informs scope decisions and highlights where additional system
+        components are required.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Requirement</th>
+            <th>Required Spec</th>
+            <th>Camera Spec</th>
+            <th>Status</th>
+            <th>Our Handling</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Resolution</td>
+            <td>≥24 MP (Panoramic)</td>
+            <td>4MP (2560×1440)</td>
+            <td><span class="tag tag-gap">Gap</span></td>
+            <td>
+              Edge node can stitch multiple PTZ positions to simulate panoramic
+              coverage. True 24MP single-sensor not achieved — to be discussed
+              with procuring authority.
+            </td>
+          </tr>
+          <tr>
+            <td>Wide Dynamic Range</td>
+            <td>&gt;118 dB</td>
+            <td>120 dB</td>
+            <td><span class="tag tag-meets">Meets</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Optical Zoom</td>
+            <td>12× or greater</td>
+            <td>40×</td>
+            <td><span class="tag tag-exceeds">Exceeds</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>PTZ Pan Range</td>
+            <td>360° full rotation</td>
+            <td>360° endless pan</td>
+            <td><span class="tag tag-meets">Meets</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>PTZ Tilt Range</td>
+            <td>−30° to +30°</td>
+            <td>−45° to +90°</td>
+            <td><span class="tag tag-exceeds">Exceeds</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Infrared (Night Mode)</td>
+            <td>Smart IR, up to 120m</td>
+            <td>Smart IR, up to 350m</td>
+            <td><span class="tag tag-exceeds">Exceeds</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Defogging</td>
+            <td>Required</td>
+            <td>Optical Defog — Yes</td>
+            <td><span class="tag tag-meets">Meets</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Time-lapse from multiple PTZ levels</td>
+            <td>Programmable, different pan/tilt/zoom levels</td>
+            <td>Not a native camera feature</td>
+            <td><span class="tag tag-gap">Not Native</span></td>
+            <td>
+              Handled entirely by edge node scheduling software via ONVIF API.
+            </td>
+          </tr>
+          <tr>
+            <td>1-month offline storage, upload on reconnect</td>
+            <td>Required</td>
+            <td>256GB SD card (camera side). No resume logic.</td>
+            <td><span class="tag tag-gap">Not Native</span></td>
+            <td>Edge node manages all buffering and upload resume logic.</td>
+          </tr>
+          <tr>
+            <td>Parallel upload to 2 servers</td>
+            <td>Simultaneous FTP/SFTP/FTPS to 2 servers</td>
+            <td>Single FTP target in camera config</td>
+            <td><span class="tag tag-gap">Not Native</span></td>
+            <td>Edge node relays to both servers in parallel.</td>
+          </tr>
+          <tr>
+            <td>Internet connectivity — Ethernet, Wi-Fi, Dual SIM 3G/4G</td>
+            <td>All three, with external antenna</td>
+            <td>Ethernet only (RJ-45)</td>
+            <td><span class="tag tag-gap">Ethernet Only</span></td>
+            <td>
+              4G router with dual SIM and external antenna provides all required
+              connectivity; edge node manages failover policy.
+            </td>
+          </tr>
+          <tr>
+            <td>Online configuration without fixed IP</td>
+            <td>Required</td>
+            <td>DDNS supported</td>
+            <td><span class="tag tag-note">Partial</span></td>
+            <td>
+              Edge node VPN tunnel provides reliable remote access regardless of
+              dynamic IP.
+            </td>
+          </tr>
+          <tr>
+            <td>Camera power supply</td>
+            <td>Not specified (assumed 12V from solar)</td>
+            <td>36V DC, 5A (max 60W)</td>
+            <td><span class="tag tag-note">Mismatch</span></td>
+            <td>
+              DC-DC 12V→36V boost converter included in per-site BOM. This is a
+              critical DC power management consideration.
+            </td>
+          </tr>
+          <tr>
+            <td>Battery/solar voltage monitoring</td>
+            <td>Via internet; email alerts</td>
+            <td>Not a camera function</td>
+            <td><span class="tag tag-gap">Not Native</span></td>
+            <td>
+              Embedded gateway reads MPPT data via RS-485; relayed to central
+              platform via edge node.
+            </td>
+          </tr>
+          <tr>
+            <td>Working temperature</td>
+            <td>−20°C to +55°C</td>
+            <td>−40°C to +70°C</td>
+            <td><span class="tag tag-exceeds">Exceeds</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Protection rating</td>
+            <td>IP66</td>
+            <td>IP67 + TVS 6000V lightning protection</td>
+            <td><span class="tag tag-exceeds">Exceeds</span></td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Warranty</td>
+            <td>3 years</td>
+            <td>Manufacturer standard (to confirm)</td>
+            <td><span class="tag tag-note">Confirm</span></td>
+            <td>
+              Warranty terms to be verified with Dahua distributor at
+              procurement.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Key Observations</h3>
+
+      <div class="callout">
+        <strong>Resolution Gap — Critical</strong>
+        The most significant specification mismatch is camera resolution. The
+        requirement calls for ≥24MP for panoramic images; the Dahua PTZ83440 is
+        a 4MP camera. In practice, for river gauge monitoring and hydrological
+        surveillance, 4MP at 40× optical zoom provides excellent detail at
+        distance. The DORI detect distance is 3,034m. However, the procuring
+        authority should be made aware of this discrepancy if the Dahua camera
+        is being formally proposed. One mitigation is to generate composite
+        panoramic images by stitching 6–12 sequential PTZ positions — the edge
+        node software supports this.
+      </div>
+
+      <div class="callout amber">
+        <strong>Power Architecture Note</strong>
+        This camera is not designed for direct 12V battery integration. The 36V
+        DC requirement introduces a DC power conversion layer that is not a
+        standard assumption in solar-powered field instrument deployments. Our
+        embedded power management scope addresses this, but it represents real
+        added complexity and cost versus a camera designed for 12V or PoE
+        operation.
+      </div>
+
+      <div class="callout green">
+        <strong>What the Camera Does Very Well</strong>
+        The PTZ83440 significantly exceeds requirements on optical zoom (40× vs
+        12× required), IR range (350m vs 120m), tilt range, temperature
+        tolerance, and ingress protection. The ONVIF Profile S/G/T compliance
+        makes it well-suited to edge-node control. The RS-485 port, while not
+        used for its intended PTZ control in this integration (ONVIF is used
+        instead), is available as a secondary control channel.
+      </div>
+
+      <p class="footnote">
+        Annexure A — Technical reference for Evon Electric engineering team. Not
+        for external distribution without review. Prepared: May 2026 · Rev 1.0
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+body {
+  font-family: Arial;
+  background: #f4f4f4;
+  padding: 20px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* PROFILE CARD */
+#profile-card {
+  width: 350px;
+  background: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+}
+
+/* IMAGE */
+#profile-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* BUTTONS */
+button {
+  margin: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+/* FINAL OUTPUT BOX */
+#output {
+  width: 350px;
+  margin: 20px 0; /* CENTER */
+  padding: 15px;
+  background: white;
+  border: 2px solid #333;
+  min-height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* EFFECTS */
+.highlighted {
+  background: yellow;
+  border: 3px solid gold;
+}
+
+.dark-mode {
+  background: #2c3e50 !important;
+  color: white;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.shadow {
+  box-shadow: 0 0 15px black;
+}
