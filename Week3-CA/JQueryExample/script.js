@@ -48,7 +48,7 @@ $(document).ready(function () {
     $("#profile-card").css("background", "white");
   });
 
-  // HIDE SHOW EFFECTS
+  //Visual EFFECTS
   $("#hide-photo").click(function () {
     $("#profile-photo").hide("slow");
   });
